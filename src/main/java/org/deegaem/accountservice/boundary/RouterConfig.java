@@ -15,4 +15,13 @@ public class RouterConfig {
                 .GET("/accounts", accountHandler::listAccounts)
                 .build();
     }
+/*    public RouterFunction<ServerResponse> accountroots(AccountHandler accountHandler) {
+        return RouterFunctions.route()
+                .GET("/accounts", accountHandler::listAccounts)
+                .GET("/accounts/{id}", RequestPredicates.accept(MediaType.TEXT_PLAIN), accountHandler::getAccountById)
+                .POST("/accounts", RequestPredicates.contentType(MediaType.APPLICATION_JSON), accountHandler::saveAccount)
+                .PUT("/accounts/{id}", RequestPredicates.contentType(MediaType.APPLICATION_JSON), accountHandler::updateBook)
+                .DELETE("/accounts/{id}", RequestPredicates.accept(MediaType.TEXT_PLAIN), accountHandler::deleteBookById)
+                .build();
+    }*/
 }
