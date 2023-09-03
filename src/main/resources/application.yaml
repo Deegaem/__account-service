@@ -1,7 +1,16 @@
+#spring:
+#  r2dbc:
+#    url: 'r2dbc:postgresql://db:54321/account'
+#    username: 'app_account'
+#    password: 'secret_passwd'
 spring:
-  r2dbc:
-    url: r2dbc:postgresql://localhost:5432/account
-    username: app_account
-    password: secret_passwd
+  docker:
+    compose:
+      enabled: 'true'
+      file: 'docker-compose.yaml'
+  sql:
+    init:
+      schema-locations: 'classpath:schema.sql'
+      mode: 'always'
 
 
