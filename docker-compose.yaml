@@ -1,26 +1,27 @@
 services:
   db:
-    image: 'postgres'
-    container_name: 'account_db_container'
+    image: postgres
+    container_name: account-db-container
     ports:
-      - '54321:5432'
+      - 32768:5432
     environment:
-      POSTGRES_USER: 'app_account'
-      POSTGRES_PASSWORD: 'secret_passwd'
-      POSTGRES_DB: 'account'
+      POSTGRES_USER: app-account
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: account
     volumes:
-      - 'account_db_data:/var/lib/postgresql/data'
-    restart: 'always'
+      - account-db-data:/var/lib/postgresql/data
+    restart: always
   backend:
-    build: '.'
-    container_name: 'account_backend_container'
+    build: .
+    container_name: account-backend-container
     ports:
-      - '8080:8080'
+      - 8080:8080
     environment:
-      db-url: 'r2dbc:postgresql://db:54321/account'
-      db-username: 'app_account'
-      db-password: 'secret_passwd'
+      db-url: r2dbc:postgresql://db:32768/account
+      db-username: app-account
+      db-password: admin
+    restart: always
     depends_on:
-      - 'db'
+      - db
 volumes:
-  account_db_data:
+  account-db-data:
