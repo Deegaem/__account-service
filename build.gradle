@@ -21,7 +21,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-docker-compose', version: '3.1.1'
+//	implementation group: 'org.springframework.boot', name: 'spring-boot-docker-compose', version: '3.1.1'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	runtimeOnly 'org.postgresql:r2dbc-postgresql'

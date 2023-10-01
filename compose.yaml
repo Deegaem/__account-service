@@ -1,3 +1,4 @@
+version: '3.8'
 services:
   db:
     image: postgres
@@ -10,7 +11,6 @@ services:
       POSTGRES_DB: account
     volumes:
       - account-db-data:/var/lib/postgresql/data
-    restart: always
   backend:
     build: .
     container_name: account-backend-container
@@ -20,7 +20,6 @@ services:
       db-url: r2dbc:postgresql://db:32768/account
       db-username: app-account
       db-password: admin
-    restart: always
     depends_on:
       - db
 volumes:
