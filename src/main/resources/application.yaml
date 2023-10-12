@@ -1,6 +1,12 @@
 spring:
   r2dbc:
-    url: r2dbc:postgresql://db:32768/account
-    username: app_account
-    password: admin
+#    url: r2dbc:postgresql://localhost:5432/account
+#    username: app_account
+#    password: secret_passwd
+     url: r2dbc:postgresql://db:5432/account
+     username: app-account
+     password: admin
 
+  logging:
+    level:
+      ROOT: DEBUG

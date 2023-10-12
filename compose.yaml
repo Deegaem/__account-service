@@ -4,7 +4,7 @@ services:
     image: postgres
     container_name: account-db-container
     ports:
-      - 32768:5432
+      - 5432:5432
     environment:
       POSTGRES_USER: app-account
       POSTGRES_PASSWORD: admin
@@ -17,7 +17,7 @@ services:
     ports:
       - 8080:8080
     environment:
-      db-url: r2dbc:postgresql://db:32768/account
+      db-url: r2dbc:postgresql://db:5432/account
       db-username: app-account
       db-password: admin
     depends_on:
