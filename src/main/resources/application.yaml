@@ -3,7 +3,7 @@ spring:
 #    url: r2dbc:postgresql://localhost:5432/account
 #    username: app_account
 #    password: secret_passwd
-     url: r2dbc:postgresql://db:5432/account
+     url: r2dbc:postgresql://account-db:5432/account
      username: app-account
      password: admin
 
