@@ -13,7 +13,7 @@ services:
       - account-db-data:/var/lib/postgresql/data
     networks:
       - account-network
-  backend:
+  account-backend:
     build: .
     container_name: account-backend-container
     ports:
@@ -24,13 +24,14 @@ services:
       db-password: admin
     networks:
       - account-network
-      - share-networks
+      - bugShare-network
     depends_on:
       - account-db
 networks:
-   account-network:
+  account-network:
     driver: bridge
-   share-networks:
+  bugShare-network:
     driver: bridge
+    name: bugshare-network
 volumes:
   account-db-data:
