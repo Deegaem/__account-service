@@ -25,6 +25,7 @@ services:
     networks:
       - account-network
       - bugShare-network
+      - commentShare-network
     depends_on:
       - account-db
 networks:
@@ -33,5 +34,8 @@ networks:
   bugShare-network:
     driver: bridge
     name: bugshare-network
+  commentShare-network:
+    driver: bridge
+    name: commentshare-network
 volumes:
   account-db-data:
