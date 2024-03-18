@@ -17,25 +17,21 @@ services:
     build: .
     container_name: account-backend-container
     ports:
-      - 8080:8080
+      - 8081:8080
     environment:
-      db-url: r2dbc:postgresql://account-db:5432/account
-      db-username: app-account
-      db-password: admin
+      account-db-url: r2dbc:postgresql://account-db:5432/account
+      account-db-username: app-account
+      account-db-password: admin
+      eureka.client.serviceUrl.defaultZone: http://bf-registry:8761/eureka/
     networks:
       - account-network
-      - bugShare-network
-      - commentShare-network
+      - bf-network
     depends_on:
       - account-db
 networks:
   account-network:
     driver: bridge
-  bugShare-network:
-    driver: bridge
-    name: bugshare-network
-  commentShare-network:
-    driver: bridge
-    name: commentshare-network
+  bf-network:
+    external: true
 volumes:
   account-db-data:
