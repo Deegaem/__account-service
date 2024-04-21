@@ -19,10 +19,19 @@ services:
     ports:
       - 8081:8080
     environment:
-      account-db-url: r2dbc:postgresql://account-db:5432/account
-      account-db-username: app-account
-      account-db-password: admin
+      spring.application.name: account-backend
+#      spring.cloud.config.enabled: false
+      spring.cloud.config.import-check.enabled: false
+      spring.cloud.discovery.enabled: true
+      spring.cloud.discovery.service-id: bf-config-server
+#      eureka.instance.hostname: bf-registry
       eureka.client.serviceUrl.defaultZone: http://bf-registry:8761/eureka/
+      eureka.client.fetchRegistry: true
+      eureka.registration.enabled: true
+#      account-db-url: r2dbc:postgresql://account-db:5432/account
+#      account-db-username: app-account
+#      account-db-password: admin
+#      eureka.client.serviceUrl.defaultZone: http://bf-registry:8761/eureka/
     networks:
       - account-network
       - bf-network

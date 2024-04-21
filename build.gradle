@@ -21,8 +21,11 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.1.0'
+	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:4.1.2'
+
 	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.2.3'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.1.0'
+	implementation 'org.springframework.cloud:spring-cloud-config-client:4.0.5'
 
 	//implementation 'io.r2dbc:r2dbc-pool:1.0.0.RELEASE'
 //	implementation group: 'org.springframework.boot', name: 'spring-boot-docker-compose', version: '3.1.1'
