@@ -1,0 +1,105 @@
+#spring:
+#  application:
+#    name: account-service
+#  r2dbc:
+#     url: r2dbc:postgresql://localhost:5432/account
+#     username: app_account
+#     password: secret_passwd
+#    url: r2dbc:postgresql://account-db:5432/account
+#    username: app-account
+#    password: admin
+#spring:
+#  application:
+#    name: account-service
+#  profiles:
+#    active: dev
+#  cloud:
+#    config:
+#      retry:
+#        max-attempts: 20
+#        max-interval: 15000
+#        initial-interval: 10000
+#        discovery:
+#          service-id: bf-config-serve
+#
+#spring:
+#  application:
+#    name: account-service
+#  profiles:
+#    active: div
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#      service-id: bf-config-server
+
+#  cloud:
+#    bootstrap:
+#      enabled: true
+##    config:
+##      fail-fast: true
+##      import-check:
+##        enabled: false
+#      discovery:
+#        enabled: true
+#        service-id: bf-config-server
+
+server:
+  port: '8080'
+spring:
+  application:
+    name: account-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: bf-config-server
+      fail-fast: true
+      retry:
+        initialInterval: '3000'
+        multiplier: '1.3'
+        maxInterval: '10000'
+        maxAttempts: '20'
+
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://bf-registry:8761/eureka
+  instance:
+    metadata-map:
+      configPath: /config
+
+management:
+  endpoints.web.exposure.include: health,info
+
+#spring:
+#  application:
+#    name: account-service
+#  profiles:
+#    active: dev
+#  config:
+    #import: optional:configserver:http://locahost:8888
+#spring:
+#  profiles:
+#    active: dev
+#  config:
+#    import: "optional:configserver:"
+#  cloud:
+#    config:
+#      uri: http://localhost:8888/
+#      name: account-service
+
+
+
+
+
+
+
+
+
+

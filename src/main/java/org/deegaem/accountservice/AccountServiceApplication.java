@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-@EnableDiscoveryClient
 public class AccountServiceApplication {
 	@Bean
 	public CorsWebFilter corsWebFilter() {
