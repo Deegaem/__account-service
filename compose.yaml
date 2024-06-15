@@ -36,7 +36,7 @@ services:
       eureka.client.fetch-registry: true
       eureka.client.serviceUrl.defaultZone: http://bf-registry:8761/eureka
       eureka.instance.metadata-map.configPath: /config
-      management.endpoints.web.exposure.include: health, info, metrics, prometheus
+      management.endpoints.web.exposure.include: health, info, prometheus
     networks:
       - account-network
       - bf-network
