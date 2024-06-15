@@ -28,8 +28,7 @@
 #    metadata-map:
 #      configPath: /config
 #
-#management:
-#  endpoints.web.exposure.include: health,info
+
 
 
 

@@ -14,11 +14,11 @@ public class RouterConfig {
     @Bean
     public RouterFunction<ServerResponse> accountsRouten(AccountHandler accountHandler) {
         return RouterFunctions.route()
-                .GET("/accounts", accountHandler::listAccounts)
-                .GET("/accounts/{account_id}", RequestPredicates.accept(MediaType.TEXT_PLAIN), accountHandler::getAccountById)
-                .POST("/accounts", RequestPredicates.contentType(MediaType.APPLICATION_JSON), accountHandler::saveAccount)
-                .PUT("/accounts", RequestPredicates.contentType(MediaType.APPLICATION_JSON), accountHandler::updateAccount)
-                .DELETE("/accounts/{account_id}", RequestPredicates.accept(MediaType.TEXT_PLAIN), accountHandler::deleteAccountById)
+                .GET("/bf/accounts", accountHandler::listAccounts)
+                .GET("/bf/accounts/{account_id}", RequestPredicates.accept(MediaType.TEXT_PLAIN), accountHandler::getAccountById)
+                .POST("/bf/accounts", RequestPredicates.contentType(MediaType.APPLICATION_JSON), accountHandler::saveAccount)
+                .PUT("/bf/accounts", RequestPredicates.contentType(MediaType.APPLICATION_JSON), accountHandler::updateAccount)
+                .DELETE("/bf/accounts/{account_id}", RequestPredicates.accept(MediaType.TEXT_PLAIN), accountHandler::deleteAccountById)
                 .build();
     }
 
