@@ -13,7 +13,7 @@ public class AccountServiceApplication {
 	@Bean
 	public CorsWebFilter corsWebFilter() {
 		CorsConfiguration corsConfig = new CorsConfiguration();
-		corsConfig.setAllowedOrigins(Arrays.asList("http://bug-backend","http://comment-backend"));
+		corsConfig.setAllowedOrigins(Arrays.asList("http://bf-gateway","http://bug-backend","http://comment-backend"));
 		corsConfig.setMaxAge(3600L);
 		corsConfig.addAllowedMethod("*");
 		corsConfig.addAllowedHeader("*");
