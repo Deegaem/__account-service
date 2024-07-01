@@ -24,7 +24,7 @@
             </message>
         </format>
     </appender>
-    <root level="info">
+    <root level="TRACE">
         <appender-ref ref="LOKI" />
         <appender-ref ref="stdout"/>
     </root>
