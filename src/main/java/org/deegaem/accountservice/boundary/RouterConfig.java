@@ -14,7 +14,7 @@ public class RouterConfig {
     @Bean
     public RouterFunction<ServerResponse> accountsRouten(AccountHandler accountHandler) {
         return RouterFunctions.route()
-                .GET("/bf/accounts", accountHandler::listAccounts)
+                .GET(" /accounts", accountHandler::listAccounts)
                 .GET("/bf/accounts/{account_id}", RequestPredicates.accept(MediaType.TEXT_PLAIN), accountHandler::getAccountById)
                 .POST("/bf/accounts", RequestPredicates.contentType(MediaType.APPLICATION_JSON), accountHandler::saveAccount)
                 .PUT("/bf/accounts", RequestPredicates.contentType(MediaType.APPLICATION_JSON), accountHandler::updateAccount)
@@ -23,5 +23,3 @@ public class RouterConfig {
     }
 
 }
-//
-//
